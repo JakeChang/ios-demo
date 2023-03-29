@@ -14,6 +14,7 @@ class CircleViewController1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Bg
         let center = CGPoint(x: circleView.bounds.midX, y: circleView.bounds.midY)
         let radius = 100.0
         
@@ -30,6 +31,7 @@ class CircleViewController1: UIViewController {
         shapeLayer.fillColor = UIColor.clear.cgColor
         circleView.layer.addSublayer(shapeLayer)
         
+        //
         let percent = 0.89
         let startAngle = CGFloat(Double.pi * 1.5)
         let endAngle = CGFloat(startAngle + percent * 2 * Double.pi)

@@ -19,8 +19,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //
-        tableArray1.append("Collection Basic")
-        
+        tableArray1.append("Test")
+        tableArray1.append("Collection: Basic")
+        tableArray1.append("Collection: Tag View")
+
         tableArray2.append("Circle Basic")
     }
 }
@@ -65,7 +67,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "TestViewController")
+                self.navigationController?.pushViewController(controller!, animated: true)
+            }
+            else if indexPath.row == 1 {
                 let controller = self.storyboard?.instantiateViewController(withIdentifier: "CollectionViewController1")
+                self.navigationController?.pushViewController(controller!, animated: true)
+            }
+            else if indexPath.row == 2 {
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "CollectionViewController2")
                 self.navigationController?.pushViewController(controller!, animated: true)
             }
         }
@@ -75,7 +85,5 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 self.navigationController?.pushViewController(controller!, animated: true)
             }
         }
-       
     }
-    
 }
